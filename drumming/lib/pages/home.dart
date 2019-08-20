@@ -1,3 +1,4 @@
+import 'package:drumming/pages/students.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget{
@@ -43,7 +44,9 @@ class Home extends StatelessWidget{
                                 )
                               ],
                             ),
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => Students()));
+                            },
                           ),
                         ],
                       ),

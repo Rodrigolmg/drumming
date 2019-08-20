@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   Widget build(BuildContext context) {
 
     Future.delayed(
-      Duration(milliseconds: 6550),
+      Duration(milliseconds: 6520),
         (){
           _animationController.forward();
         }
