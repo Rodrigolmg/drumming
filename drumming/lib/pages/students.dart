@@ -1,3 +1,4 @@
+import 'package:drumming/pages/student_register.dart';
 import 'package:flutter/material.dart';
 
 class Students extends StatelessWidget {
@@ -19,12 +20,24 @@ class Students extends StatelessWidget {
       ),
       body: Container(
         color: Colors.black,
-        child: ListView(
+        child: Scaffold(
+          backgroundColor: Colors.black,
+          body: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  color: Colors.black,
+                ),
 
+              ],
+            ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => StudentRegister()));
+        },
         backgroundColor: Color.fromRGBO(208, 165, 74, 10.0),
         child: Icon(Icons.add),
       ),

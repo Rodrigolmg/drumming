@@ -2,6 +2,7 @@
 
 class Student{
 
+
   //Attributes
   Map<dynamic, dynamic> _studentData = Map();
   //Singleton

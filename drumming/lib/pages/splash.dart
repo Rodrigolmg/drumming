@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
 
     Future.delayed(
-        Duration(seconds: 20),
+        Duration(milliseconds: 4999),
         (){
           Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => Home())
@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   Widget build(BuildContext context) {
 
     Future.delayed(
-      Duration(milliseconds: 6520),
+      Duration(milliseconds: 2500),
         (){
           _animationController.forward();
         }
