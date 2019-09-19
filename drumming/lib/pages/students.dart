@@ -1,4 +1,6 @@
+import 'package:drumming/components/custom_appbar.dart';
 import 'package:drumming/pages/student_register.dart';
+import 'package:drumming/utils/labels.dart';
 import 'package:flutter/material.dart';
 
 class Students extends StatelessWidget {
@@ -9,17 +11,18 @@ class Students extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(208, 165, 74, 10.0),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: (){}
-          ),
+      appBar: CustomAppBar(
+        isLeading: true,
+        isHome: false,
+        centerTitle: true,
+        title: Label.labelStudentsBarTitle,
+        icons: [Icon(Icons.search)],
+        callbacks: [
+          (){}
         ],
+        iconListSize: 1,
       ),
       body: Container(
-        color: Colors.black,
         child: Scaffold(
           backgroundColor: Colors.black,
           body: SingleChildScrollView(

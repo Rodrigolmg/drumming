@@ -4,6 +4,7 @@ import 'package:path/path.dart';
 
 final String studentTable = "studentTable";
 final String nameColumn = "nameColumn";
+final String surnameColumn = "surnameColumn";
 final String emailColumn = "emailColumn";
 final String mainNumberColumn = "mainNumberColumn";
 final String optionalNumberColumn = "optionalNumberColumn";
@@ -33,8 +34,8 @@ class DBProvider {
     return await openDatabase(path, version: 1, onCreate: (db, newerVersion) async{
       await db.execute(
         "CREATE TABLE $studentTable($emailColumn TEXT PRIMARY KEY, "
-            "$nameColumn TEXT, $mainNumberColumn TEXT, $optionalNumberColumn TEXT, "
-            "$imgColumn TEXT)"
+            "$nameColumn TEXT, $surnameColumn TEXT,$mainNumberColumn TEXT, "
+            "$optionalNumberColumn TEXT, $imgColumn TEXT)"
       );
     });
   }
