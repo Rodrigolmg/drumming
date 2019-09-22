@@ -1,39 +1,39 @@
+import 'package:drumming/components/custom_buttom.dart';
 import 'package:flutter/material.dart';
 
-enum ButtonTypes {
-  FLATBUTTON, //MaterialButton's child
-  ICONBUTTON,
-  RAISEDBUTTON,//MaterialButton's child
-  FLOATINGBUTTON,
-  MATERIALBUTTON,
-  OUTLINEBUTTON,//MaterialButton's child
-}
+import 'button_types.dart';
 
-abstract class ButtonType {
+class ButtonBuilder{
 
-  Widget getFlatButton(){
-    return DropdownButton(items: null, onChanged: null);
+  CustomButton customButton;
+
+  ButtonBuilder(this.customButton);
+
+
+  Widget getButton(){
+    switch(customButton.buttonType){
+      case ButtonTypes.FLATBUTTON:
+        return CallFlatButton(customButton).getFlatButton();
+      case ButtonTypes.ICONBUTTON:
+      case ButtonTypes.RAISEDBUTTON:
+      case ButtonTypes.FLOATINGBUTTON:
+      case ButtonTypes.MATERIALBUTTON:
+      case ButtonTypes.OUTLINEBUTTON:
+    }
   }
 }
 
-//RaisedButton
-/**
- * double elevation,
-    double focusElevation,
-    double hoverElevation,
-    double highlightElevation,
-    double disabledElevation,
-    Duration animationDuration
- *
- *
-**/
+class CallFlatButton {
 
+  CustomButton customButton;
 
-//OutlineButton
-/**
- * this.borderSide,
-    this.disabledBorderColor,
-    this.highlightedBorderColor,
- *
- *
- **/
+  CallFlatButton(this.customButton);
+
+  Widget getFlatButton(){
+    return FlatButton(
+      onPressed: customButton.onPressed,
+      child: customButton.child,
+    );
+  }
+
+}
